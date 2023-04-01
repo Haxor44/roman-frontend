@@ -6,26 +6,21 @@ const ServiceComponent = ()=>{
 	const renderITems = services.map((service)=>{
 		const {id,title,image,price,category} = service;
 		return(
-			<div className="product-box column" key={id}>
-				<Link to={`/service${id}`}>
-				<div className="product-item">
-					
-						<div className="product-item-image">
-							<img src={image} alt={title}/>
-							<div class="product-item-image-hover">
-                        	</div>
-						</div>
-						<div className="product-item-content">
-							<div className="product-item-title">{title}</div>
-							<div className="product-item-price">$ {price}</div>
-							<div className="product-item-category">{category}</div>
-							 <div class="button-pill">
-                            <span>Shop Now</span>
-                        </div>						</div>
-					</div>
-				
-				</Link>
-			</div>
+
+
+			<div className="product-card" key={id}>
+			<Link to={`/service${id}`}/>
+  			<img src={image} alt={title}/>
+  <h3 className="product-name"> {title}</h3>
+  <p className="product-description">Product Description</p>
+  <div className="product-price">${price}</div>
+  <button className="add-to-cart-button">Add to Cart</button>
+</div>
+
+			
+
+
+			
 		);
 	})
 	return(

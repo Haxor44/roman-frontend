@@ -21,11 +21,10 @@ const ServiceListing = ()=>{
 	return(
 		<React.Fragment>
 	
-			<div class="grid-container">
-        		<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-4 grid-x-wrapper">
+			 <div className="product-container">
 					<ServiceComponent/>
+					
 			</div>
-		</div>
 		</React.Fragment>
 		)
 };
