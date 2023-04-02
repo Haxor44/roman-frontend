@@ -8,34 +8,7 @@ body { background: #f4f6f9; }
 
 /* Products
 ************************** */
-table {
-    table-layout: auto;
-    border-spacing: 0;
-    border-collapse: collapse;
-    width: 450px;
-    margin: 40px auto;
-}
-table th,
-table td {
-    border: 1px solid black;
-    vertical-align: top;
-}
-.col-item-name {
-    width: 60%;
-}
-.col-quantity,
-.col-price {
-    width: 20%;
-}
-table th {
-    background-color: #869960;
-    color: #fff;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
-}
-.price_txt {
-    text-align: right;
-    font-weight: bold;
-}
+
 .wrapper{
     display: flex;
     align-items: center;
