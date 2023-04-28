@@ -5,18 +5,45 @@
  * modernaweb.net
  * * * * * * * * * */
 body { background: #f4f6f9; }
-
+a:focus,
+a:hover {color: #000;}
 /* Products
 ************************** */
-
+table {
+    table-layout: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 450px;
+    margin: 40px auto;
+}
+table th,
+table td {
+    border: 1px solid black;
+    vertical-align: top;
+}
+.col-item-name {
+    width: 60%;
+}
+.col-quantity,
+.col-price {
+    width: 20%;
+}
+table th {
+    background-color: #869960;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+.price_txt {
+    text-align: right;
+    font-weight: bold;
+}
 .wrapper{
     display: flex;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    color: #eeeeee;
-    background: #222831;
-    max-width: 300px;
+    color:black;
+    max-width: 400px;
     border-radius: 8px;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
 }
@@ -33,6 +60,56 @@ body { background: #f4f6f9; }
     background: #ece9e6;
     background: linear-gradient(to right, #ffffff, #ece9e6);
 
+}
+
+
+.services{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; 
+  width: 200px;
+  margin-left: 70px;
+  text-decoration: none;
+}
+
+.images{
+    width: 100px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.cards {
+  padding: 2px 16px;
+}
+
+.cards {
+    text-decoration: none;
+}
+
+.purchase{
+
+    background-color: #7b68ee;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+.title{
+    text-align: center;
 }
 .footer {
         border-bottom-left-radius: 8px;
@@ -62,7 +139,6 @@ body { background: #f4f6f9; }
         pointer-events: none;
     }
 .btn {
-    color: #eeeeee;
     background-color: transparent;
     outline: none;
     padding: 3px;

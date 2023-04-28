@@ -30,19 +30,17 @@ const Register = () => {
             <body className="body2">
             <div>
             <form  className="wrapper">
-            <h2>LOGIN</h2>
+            <h2>REGISTRATION</h2>
             <section className="group">
                 <input
                     type="text"
                     size="7"
                     className="input"
                     name="name"
+                     placeholder="Enter Name"
                     onChange={(e)=> setName(e.target.value)}
                     required
                 />
-                <label htmlFor="Name" className="label">
-                    Name
-                </label>
             </section>
             <section className="group">
                 <input
@@ -50,12 +48,10 @@ const Register = () => {
                     size="7"
                     className="input"
                     name="email"
+                     placeholder="Enter email..."
                     onChange={(e)=> setEmail(e.target.value)}
                     required
                 />
-                <label htmlFor="email" className="label">
-                    Email
-                </label>
             </section>
             <section className="group">
                 <input
@@ -63,12 +59,10 @@ const Register = () => {
                     
                     className="input"
                     name="password"
+                     placeholder="Enter password"
                     onChange={(e)=> setPassword(e.target.value)}
                     required
                 />
-                <label htmlFor="password" className="label">
-                    Password
-                </label>
             </section>
             <section className="group">
                 <input
@@ -76,12 +70,10 @@ const Register = () => {
                     size="7"
                     className="input"
                     name="phone"
+                     placeholder="Enter phone number"
                     onChange={(e)=> setPhone(e.target.value)}
                     required
                 />
-                <label htmlFor="phone" className="label">
-                    Phone
-                </label>
             </section>
             <button  type="submit" onClick={handleSubmit} className="btn">
                 REGISTER

@@ -6,16 +6,21 @@ const ServiceComponent = ()=>{
 	const renderITems = services.map((service)=>{
 		const {id,title,image,price,category} = service;
 		return(
-
-			<tr key={id}>
-			<Link to={`/service${id}`}>
-         	<td>{title}</td>
-         	<td align="center">{category}</td>
-         	<td align="center">${price}</td>
-         	</Link>
-     		 </tr>
-
 			
+			
+			<div className="card">
+			<div class="cards">
+			<img src={image} alt="Avatar" className="images"/>
+         			<p>{title}</p>
+         			
+         		<p>{category}</p>
+         		<p>${price}</p>
+         		<Link className="purchase" to={`/service${id}`}>Buy</Link>
+ 			 </div>
+ 			 </div>
+			
+     		 
+     		
 
 
 			
@@ -27,3 +32,4 @@ const ServiceComponent = ()=>{
 };
 
 export default ServiceComponent;
+

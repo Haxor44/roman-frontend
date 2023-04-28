@@ -42,25 +42,21 @@ const Login = () => {
                     size="7"
                     className="input"
                     name="email"
+                    placeholder="Enter email..."
                     onChange={(e)=> setEmail(e.target.value)}
                     required
                 />
-                <label htmlFor="email" className="label">
-                    Email
-                </label>
+               
             </section>
             <section className="group">
                 <input
                     type="password"
-                    
                     className="input"
                     name="password"
+                     placeholder="Enter your password..."
                     onChange={(e)=> setPassword(e.target.value)}
                     required
                 />
-                <label htmlFor="password" className="label">
-                    Password
-                </label>
             </section>
             <button  type="submit" onClick={handleSubmit} className="btn">
                 LOGIN

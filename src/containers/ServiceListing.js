@@ -9,7 +9,7 @@ const ServiceListing = ()=>{
 	const services = useSelector((state)=>state);
 	const dispacther = useDispatch();
 	const fetchProducts = async()=>{
-		const response = await axios.get("https://fakestoreapi.com/products").catch((err)=>{
+		const response = await axios.get("https://roman-webservice.onrender.com/api/v1/services").catch((err)=>{
 			console.log("Err",err);
 		});
 		dispacther(setServices(response.data));
@@ -20,12 +20,11 @@ const ServiceListing = ()=>{
 	},[]);
 	return(
 		<React.Fragment>
-	
-			<div class="grid-container">
-        		<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-4 grid-x-wrapper">
-					<ServiceComponent/>
-			</div>
-		</div>
+					<h2 className="title">Services</h2>
+					<div className="services">
+						<ServiceComponent/>
+					</div>
+		
 		</React.Fragment>
 		)
 };
