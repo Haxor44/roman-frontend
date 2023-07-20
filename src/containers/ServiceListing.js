@@ -1,32 +1,33 @@
 import React, {useEffect} from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import ServiceComponent from "./ServiceComponent";
+import Service from "./Service";
+import {Box} from "@mui/material";
 import {setServices} from '../redux/actions/producactions';
+
 
 
 const ServiceListing = ()=>{
 	const services = useSelector((state)=>state);
 	const dispacther = useDispatch();
+	const token = useSelector((state)=>state.authentication.auth);
+
 	const fetchProducts = async()=>{
-		const response = await axios.get("https://roman-webservice.onrender.com/api/v1/services").catch((err)=>{
+		const response = await axios.get("http://localhost:8080/api/v2/services",{ headers: {"Authorization" : `Bearer ${token}`}, }).catch((err)=>{
 			console.log("Err",err);
 		});
-		dispacther(setServices(response.data));
+		dispacther(setServices(response));
 	}
 
 	useEffect(()=>{
 		fetchProducts();
 	},[]);
 	return(
-		<React.Fragment>
-					<h2 className="title">Services</h2>
-					<div className="services">
-						<ServiceComponent/>
-					</div>
-		
-		</React.Fragment>
+			<Box  flex={4}>
+				<h1 className="service-header">Services</h1>
+				<Service/>
+			</Box>
 		)
 };
 
-export default ServiceListing
+export default ServiceListing;

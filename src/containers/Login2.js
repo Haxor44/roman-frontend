@@ -1,7 +1,7 @@
 import React from "react";
 import axios from '../api/axios';
 
-const LOGIN_URL = '/api/auth/login';
+const LOGIN_URL = '/auth/token';
 class Login2 extends React.Component {
     constructor() {
     super();

@@ -4,29 +4,31 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
 	const auth = useSelector((state)=>state.authentication.auth);
+	
 	return(
+				<div>
+				<header role="banner">
+  					<h1>Home</h1>
+  
+				</header>
 
-			<div className="headers">
-				<div className="">
-					<h2>Roman Services</h2>
-				</div>
-				<div className="header">
 					{
-						!auth ? 
+						
+						!auth ?  
+
 						<ul>
-						<li><Link style={{ textDecoration:'none'}} to="/">Home</Link></li>
-						<li><Link style={{ textDecoration:'none'}} to="/login">Login</Link></li>
-						<li><Link style={{ textDecoration:'none'}} to="/register">Register</Link></li>
+						<br/>
+						<li className="users"><Link style={{textDecoration:'none'}} to="/login">Accounts</Link></li>
+						<li ><Link style={{textDecoration:'none'}} to="/login">Login</Link></li>
 					</ul>
 						 : 
-						 <ul>
-						<li><Link to="/">Home</Link></li>
-						<li><Link to="/login">Logout</Link></li>
+					<ul>
+						<li><Link style={{textDecoration:'none'}} to="/">Home</Link></li>
+						<li className="logout warn"><Link style={{textDecoration:'none'}} to="/login">Logout</Link></li>
 					</ul>
-					
 					 }
 					
-				</div>
+				
 			</div>
 		)
 }
