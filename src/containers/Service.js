@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {Box} from "@mui/material";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -15,9 +16,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import mechanic from "../images/mechanic.jpg";
 import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
+import Checkout from './Checkout';
+import ServiceDetail from './ServiceDetail';
 
-class Service extends React.Component{
-  render(){
+
+const Service = () => {
+  const navigate = useNavigate();
     return(
         
           <Box  flex={4}>
@@ -98,7 +102,7 @@ class Service extends React.Component{
       <CardActions disableSpacing>
      
         <IconButton aria-label="purchase">
-          <Button variant="contained">Get Service</Button>
+          <Button variant="contained" onClick={()=> navigate("/serviceDetail")}>Get Service</Button>
         </IconButton>
          <IconButton aria-label="add to favorites">
           <Rating name="size-medium" defaultValue={2} />
@@ -152,7 +156,7 @@ class Service extends React.Component{
           </Box>
         
       )
-  }
+  
 }
 
 
