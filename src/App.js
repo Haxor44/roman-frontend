@@ -19,7 +19,7 @@ function App() {
         <Route exact path="/" element={<Services/>}/>
         
         <Route exact path="/services" element={<Services/>}/>
-        <Route exact path="/service/:serviceId"  element={<ServiceDetail/>}/>
+        <Route exact path="/serviceDetail"  element={<ServiceDetail/>}/>
         <Route exact path="/checkout"  element={<Checkout/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/register" element={<Register/>}/>
