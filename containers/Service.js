@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import axios from '../api/axios';
 import {Box} from "@mui/material";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -20,139 +21,65 @@ import Checkout from './Checkout';
 import ServiceDetail from './ServiceDetail';
 
 
+
+
+
 const Service = () => {
+  const [users, setUsers] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/v2/services")
+      .then((res) => setUsers(res.data))
+      .catch(err => {
+       setError(err.message);
+  });
+  
+  }, []);
+  console.log(users);
     return(
         
           <Box  flex={4}>
+            {users.map((user) => (
+              
+              <Card sx={{ maxWidth: 600, margin: 6 }}>
+                <CardHeader
+                  avatar={<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    R
+                  </Avatar>}
+                  action={<IconButton aria-label="settings">
+                    <MoreVertIcon />
+                  </IconButton>}
+                  title={user.name}
+                  subheader="Mechanic" />
+                <CardMedia
+                  component="img"
+                  height="20%"
+                  image={mechanic}
+                  alt="Mechanic" />
+                <CardContent>
+                  <Typography variant="body2" color="text.secondary">
+                    This impressive paella is a perfect party dish and a fun meal to cook
+                    together with your guests. Add 1 cup of frozen peas along with the mussels,
+                    if you like.
+                    <h4>Price:Ksh10,000</h4>
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+
+                  <IconButton aria-label="purchase">
+                    <Button variant="contained">Get Service</Button>
+                  </IconButton>
+                  <IconButton aria-label="add to favorites">
+                    <Rating name="size-medium" defaultValue={2} />
+                  </IconButton>
+                </CardActions>
+
+              </Card>
+        ))}
             
-            <Card sx={{ maxWidth: 600,margin:6 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="John Doe"
-        subheader="Mechanic"
-      />
-      <CardMedia
-        component="img"
 
-        height="20%"
-        image={mechanic}
-        alt="Mechanic"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-          <h4>Price:Ksh10,000</h4>
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-     
-        <IconButton aria-label="purchase">
-          <Button variant="contained">Get Service</Button>
-        </IconButton>
-         <IconButton aria-label="add to favorites">
-          <Rating name="size-medium" defaultValue={2} />
-        </IconButton>
-      </CardActions>
-
-    </Card>
-
-
-    <Card sx={{ maxWidth: 600,margin:5 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="John Doe"
-        subheader="Mechanic"
-      />
-      <CardMedia
-        component="img"
-
-        height="20%"
-        image={mechanic}
-        alt="Mechanic"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-          <h4>Price:Ksh20,000</h4>
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-     
-        <IconButton aria-label="purchase">
-          <Button variant="contained" onClick={()=> navigate("/serviceDetail")}>Get Service</Button>
-        </IconButton>
-         <IconButton aria-label="add to favorites">
-          <Rating name="size-medium" defaultValue={2} />
-        </IconButton>
-      </CardActions>
-
-    </Card>
-
-
-    <Card sx={{ maxWidth: 600,margin:5 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="John Doe"
-        subheader="Mechanic"
-      />
-      <CardMedia
-        component="img"
-
-        height="20%"
-        image={mechanic}
-        alt="Mechanic"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-          <h4>Price:Ksh30,000</h4>
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-     
-        <IconButton aria-label="purchase">
-          <Button variant="contained">Get Service</Button>
-        </IconButton>
-         <IconButton aria-label="add to favorites">
-          <Rating name="size-medium" defaultValue={2} />
-        </IconButton>
-      </CardActions>
-
-    </Card>
           </Box>
         
       )

@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-	baseURL:'https://roman-webservice.onrender.com:8080'
+	baseURL:'https://roman-webservice.onrender.com'
 });
