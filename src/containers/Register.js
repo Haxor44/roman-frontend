@@ -41,6 +41,11 @@ export default function Register() {
   const [phone,setPhone] = useState('');
 
   const navigate = useNavigate();
+  const config = {
+    headers:{
+      headers: {'Origin': 'https://roman-webservice.onrender.com'}
+    }
+  };
 
   const handleSubmit = async(event) => {
     event.preventDefault();
@@ -48,8 +53,8 @@ export default function Register() {
     //const role = "user";
     const notify = () => toast("User Regiatered successfully!!!");
  
-    const registerReq  = await axios.post(REGISTER_URL, 
-                JSON.stringify({name,email,password,phone}), 
+    const registerReq  = await axios.post("https://cors-anywhere.herokuapp.com/https://roman-webservice.onrender.com/register", 
+                JSON.stringify({name,email,password,phone},config), 
             {
                 headers:{'Content-Type':'application/json'},
                 withCredentials:true});

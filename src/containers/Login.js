@@ -34,7 +34,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-const LOGIN_URL = '/auth/token';
+
 export default function Login() {
 
   const [username,setUsername] = useState('');
@@ -44,13 +44,18 @@ export default function Login() {
   const dispatcher = useDispatch();
   const notify = () => toast("Login successfully!!!");
   const navigate = useNavigate();
+  const config = {
+    headers:{
+      headers: {'Origin': 'https://roman-webservice.onrender.com'}
+    }
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
     
     
-
-    const loginRes  = await axios.post(LOGIN_URL, 
-                JSON.stringify({username,password}), 
+    
+    const loginRes  = await axios.post("https://cors-anywhere.herokuapp.com/https://roman-webservice.onrender.com/auth/token", 
+                JSON.stringify({username,password},config), 
             {
                 headers:{'Content-Type':'application/json'},
                 withCredentials:true});
