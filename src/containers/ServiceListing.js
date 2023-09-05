@@ -13,7 +13,7 @@ const ServiceListing = ()=>{
 	const token = useSelector((state)=>state.authentication.auth);
 
 	const fetchProducts = async()=>{
-		const response = await axios.get("http://localhost:8080/api/v2/services",{ headers: {"Authorization" : `Bearer ${token}`}, }).catch((err)=>{
+		const response = await axios.get("https://service-api-0nnq.onrender.com/api/v2/services").catch((err)=>{
 			console.log("Err",err);
 		});
 		dispacther(setServices(response));
