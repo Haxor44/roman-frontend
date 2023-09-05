@@ -36,7 +36,7 @@ const Service = () => {
   useEffect(() => {
 
     axios
-      .get("https://corsproxy-1m4k.onrender.com/proxy/",config)
+      .get("https://corsproxy-hnu5.onrender.com/")
       .then((res) => setUsers(res.data))
       .catch(err => {
         console.err('Error fetching data:', err);
