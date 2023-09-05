@@ -8,7 +8,7 @@ import {Box} from "@mui/material";
     
        return (
         promiseInProgress && 
-        <Box  flex={4}>
+        <Box style={{ marginTop: 250,display: "flex",justifyContent: "center", alignItems:"center"  }}>
           <ThreeDots type="ThreeDots" color="#7B68EE" height="100" width="100" />
       </Box>
       );  
