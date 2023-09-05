@@ -1,9 +1,6 @@
 import React,{useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import { trackPromise } from 'react-promise-tracker';
-=======
->>>>>>> 669aeb14a2450c0d7b54d61bc30e8562ef00d760
 import axios from '../api/axios';
 import {Box} from "@mui/material";
 import Card from '@mui/material/Card';
@@ -31,31 +28,16 @@ import ServiceDetail from './ServiceDetail';
 const Service = () => {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
-<<<<<<< HEAD
   
 
   useEffect(() => {
     trackPromise(
-=======
-  const config = {
-    headers:{
-      headers: {'Origin': 'service-api-0nnq.onrender.com'}
-    }
-  };
-
-  useEffect(() => {
-
->>>>>>> 669aeb14a2450c0d7b54d61bc30e8562ef00d760
     axios
       .get("https://corsproxy-hnu5.onrender.com/")
       .then((res) => setUsers(res.data))
       .catch(err => {
         console.err('Error fetching data:', err);
-<<<<<<< HEAD
   }));
-=======
-  });
->>>>>>> 669aeb14a2450c0d7b54d61bc30e8562ef00d760
   
   }, []);
   console.log(users);
