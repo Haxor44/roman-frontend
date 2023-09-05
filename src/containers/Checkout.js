@@ -3,13 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Typography, Paper, TextField, Button, Grid, Container } from '@mui/material';
 import HomeNavbar from "./HomeNavbar";
 
-const Checkout = () => {
-  const navigate = useNavigate();
-  
-  //redirects
-  const redirect = () => {
-    return window.location.href = "https://smart-lipa.web.app/";
-
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -35,7 +28,6 @@ function getStepContent(step) {
       return <Review />;
     default:
       throw new Error('Unknown step');
-
   }
   return (
     <React.Fragment>
