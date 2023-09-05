@@ -3,40 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Typography, Paper, TextField, Button, Grid, Container } from '@mui/material';
 import HomeNavbar from "./HomeNavbar";
 
-<<<<<<< HEAD
 const Checkout = () => {
   const navigate = useNavigate();
   
   //redirects
   const redirect = () => {
     return window.location.href = "https://smart-lipa.web.app/";
-=======
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        RMS
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
-
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-      return <Payment />;
-    case 2:
-      return <Review />;
-    default:
-      throw new Error('Unknown step');
->>>>>>> 669aeb14a2450c0d7b54d61bc30e8562ef00d760
   }
   return (
     <React.Fragment>
